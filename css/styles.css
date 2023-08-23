@@ -1,0 +1,349 @@
+:root {
+	--almost-black: #111;
+	--dark-grey: #1e1823;
+	--grey-color: hsla(0, 0%, 7%, 0.7);
+	--light-grey: #1111111a;
+	--almost-white: rgba(255, 255, 255, 0.7);
+	--white-color: #fff;
+	--light-orange: #fcf1e0;
+	--dark-orange: #fd9222;
+	--shadow: rgba(215, 228, 249, 0.25);
+}
+body {
+	max-width: 1600px;
+	margin: auto;
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+}
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+/* e acelasi container ca la mine care stabileste padding la continut de 20 px pe telefon si column */
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* gap: 32px; ca sa fie cel mai ok asta l-am pus la mine la clasa deja existenta 
+	.top-sellers-section {
+	gap: 32px;} si aici la clasa deja existenta langa container, pentru ca ea are alt gap
+	*/
+	padding: 0 20px;
+}
+.bg_sub_img {
+	background-image: linear-gradient(
+			rgba(0, 0, 0, 0.2) 0%,
+			rgba(0, 0, 0, 0.2) 100%
+		),
+		url(../images/Subscribe_mobil.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+@media (min-device-pixel-ratio: 2),
+	(-webkit-min-device-pixel-ratio: 2),
+	(min-resolution: 192dpi),
+	(min-resolution: 2dppx) {
+	.box {
+		background-image: url(../images/Subscribe_mobil_2x.png);
+	}
+}
+.sub_section {
+	padding-top: 62px;
+	padding-bottom: 63px;
+	gap: 24px;
+}
+.subscribe_title,
+.paragraph_subscribe {
+	color: var(--white-color);
+	text-align: center;
+	margin: 0;
+}
+.subscribe_title {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0.6px;
+	text-transform: uppercase;
+}
+.paragraph_subscribe {
+	font-size: 14px;
+	line-height: 18px;
+	letter-spacing: -0.28px;
+	max-width: 326px;
+}
+/* aici am pus se de la sectiunile mele primele 2 clase, practic am adaugat clasa de la butoanele ei*/
+.top-sellers-section .button,
+.submit-button,
+.subscribe_button {
+	background-color: var(--dark-orange);
+	color: var(--white-color);
+	font-size: 14px;
+	font-weight: 600;
+	padding: 12px 28px;
+	border-radius: 100px;
+	border-style: none;
+	cursor: pointer;
+}
+.email-form .submit-button {
+	background-color: var(--dark-orange);
+	color: var(--white-color);
+	font-size: 14px;
+	font-weight: 600;
+	/* la padding superior e singura diferenta de celelalte butoane */
+	padding: 14px 28px;
+	border-radius: 100px;
+	border-style: none;
+	cursor: pointer;
+}
+/* aici am hover la butoane care eu am uitat sa pun la mine, am pus aici totul */
+.top-sellers-section .button:hover,
+.submit-button:hover,
+.subscribe_button:hover,
+.submit-button:hover {
+	background: var(--light-orange);
+	color: var(--dark-orange);
+}
+/*CSS-MODAL!!*/
+/* acelasi backdrop 1 la 1 */
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow-y: auto;
+	width: 100%;
+	height: 100%;
+	background-color: #0000004d;
+	/* asta cu blur e o adaugare */
+	backdrop-filter: blur(2px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: opacity 0.5s linear, visibility 0.5s linear;
+	z-index: 5;
+}
+.is-hidden {
+	visibility: hidden;
+	pointer-events: none;
+	opacity: 0;
+}
+/* aceleasi stilizari ca la modalul meu 1 la 1, doar am adaugat si clasa ei */
+.modal,
+.modal-subscribe {
+	background-color: #fafafa;
+	border-radius: 15px;
+	position: relative;
+	margin: auto 0;
+	max-width: 311px;
+	display: flex;
+}
+.modal-subscribe {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+/* aceleasi stilizari ca la butonul meu de inchidere, doar am adaugat clasa ei, apoi am pus diferentele mai jos */
+.modal .close-button,
+.modal-subscribe .close-button {
+	width: 24px;
+	height: 24px;
+	padding: 0;
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	border-style: none;
+	background-color: inherit;
+	cursor: pointer;
+}
+.modal-header .close-button {
+	background-color: transparent;
+}
+.modal-header .close-button svg {
+	width: 100%;
+	height: 100%;
+	stroke: var(--white-color);
+}
+.modal-header {
+	background: url(../images/modal_picture_mobil.png),
+		lightgray 50% / cover no-repeat;
+	overflow: hidden;
+}
+@media (min-device-pixel-ratio: 2),
+	(-webkit-min-device-pixel-ratio: 2),
+	(min-resolution: 192dpi),
+	(min-resolution: 2dppx) {
+	.modal-header {
+		background-image: url(../images/modal_picture_mobil_2x.png);
+	}
+}
+.modal-header {
+	height: 169px;
+}
+.subscribe-form {
+	padding: 32px 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+.subscribe-modal-title {
+	color: var(--almost-black);
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: -0.6px;
+	text-transform: uppercase;
+	margin: 0;
+}
+.modal-new-chocolate {
+	color: var(--dark-orange);
+}
+.email-form {
+	position: relative;
+	display: flex;
+	gap: 8px;
+}
+.email-form .submit-button {
+	position: absolute;
+	right: 0;
+}
+.email-form {
+	display: flex;
+	align-items: center;
+}
+.email-form input {
+	padding: 14px 18px;
+	border-radius: 25px;
+	border: 1.5px solid rgba(17, 17, 17, 0.05);
+	box-shadow: 0px 5.444915294647217px 5.444915294647217px 0px
+		rgba(0, 0, 0, 0.03);
+	width: 100%;
+}
+/* primele 2 clase sunt de la mine, nu le pusesem decat culoare, acum le-am pus si font size */
+.form-field input,
+.form-field textarea,
+.email-form input {
+	font-size: 14px;
+	letter-spacing: -0.28px;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder,
+.email-form input::placeholder {
+	color: rgba(64, 64, 64, 0.3);
+}
+@media screen and (min-width: 768px) {
+	.bg_sub_img {
+		background-image: linear-gradient(
+				rgba(0, 0, 0, 0.2) 0%,
+				rgba(0, 0, 0, 0.2) 100%
+			),
+			url(../images/Subscribe_tablet.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	@media (min-device-pixel-ratio: 2),
+		(-webkit-min-device-pixel-ratio: 2),
+		(min-resolution: 192dpi),
+		(min-resolution: 2dppx) {
+		.bg_sub_img {
+			background-image: url(../images/Subscribe_tablet_2x.png);
+		}
+	}
+	.paragraph_subscribe {
+		max-width: 467px;
+	}
+	.modal-header {
+		background: url(../images/modal_picture_tablet.png),
+			lightgray 50% / cover no-repeat;
+	}
+	@media (min-device-pixel-ratio: 2),
+		(-webkit-min-device-pixel-ratio: 2),
+		(min-resolution: 192dpi),
+		(min-resolution: 2dppx) {
+		.modal-header {
+			background-image: url(../images/modal_picture_tablet_2x.png);
+		}
+	}
+	.modal-header {
+		height: 196px;
+	}
+	.modal-subscribe {
+		min-width: 538px;
+	}
+	.subscribe-form {
+		padding: 40px;
+	}
+	/* aici si la butoanele mele am uitat sa fac modificarile de dimensiuni, pune-le te rog impreuna cu acestea */
+	.top-sellers-section .button,
+	.subscribe_button {
+		padding: 14px 40px;
+		font-size: 18px;
+	}
+	/* asta tot al meu e */
+	.submit-button {
+		padding: 14px 40px;
+	}
+	.email-form .submit-button {
+		padding: 17px 40px;
+		position: static;
+	}
+	/* aceasta e o modificare care si mie mi-a scapat, din nou :( */
+	.modal .close-button,
+	.modal-subscribe .close-button {
+		width: 28px;
+		height: 28px;
+		top: 24px;
+		right: 24px;
+	}
+	.subscribe-form {
+		gap: 28px;
+	}
+	.subscribe-modal-title {
+		font-size: 24px;
+		line-height: 28px;
+		letter-spacing: -0.72px;
+		text-transform: uppercase;
+	}
+	.email-form input {
+		padding: 14px 24px;
+	}
+	.email-form input,
+	.form-field input,
+	.form-field textarea {
+		font-size: 18px;
+		letter-spacing: -0.36px;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.bg_sub_img {
+		background-image: linear-gradient(
+				rgba(0, 0, 0, 0.2) 0%,
+				rgba(0, 0, 0, 0.2) 100%
+			),
+			url(../images/Subscribe_desktop.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	@media (min-device-pixel-ratio: 2),
+		(-webkit-min-device-pixel-ratio: 2),
+		(min-resolution: 192dpi),
+		(min-resolution: 2dppx) {
+		.bg_sub_img {
+			background-image: url(../images/Subscribe_desktop_2x.png);
+		}
+	}
+	.modal-header {
+		background: url(../images/modal_picture_desktop.png),
+			lightgray 50% / cover no-repeat;
+	}
+	@media (min-device-pixel-ratio: 2),
+		(-webkit-min-device-pixel-ratio: 2),
+		(min-resolution: 192dpi),
+		(min-resolution: 2dppx) {
+		.modal-header {
+			background-image: url(../images/modal_picture_desktop_2x.png);
+		}
+	}
+}
