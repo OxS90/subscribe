@@ -99,7 +99,6 @@ img {
 }
 /* aici am hover la butoane care eu am uitat sa pun la mine, am pus aici totul */
 .top-sellers-section .button:hover,
-.submit-button:hover,
 .subscribe_button:hover,
 .submit-button:hover {
 	background: var(--light-orange);
@@ -211,6 +210,9 @@ img {
 	display: flex;
 	align-items: center;
 }
+/* primele 2 clase sunt de la mine, am adaugat si clasa ei */
+.form-field input,
+.form-field textarea,
 .email-form input {
 	padding: 14px 18px;
 	border-radius: 25px;
@@ -218,11 +220,6 @@ img {
 	box-shadow: 0px 5.444915294647217px 5.444915294647217px 0px
 		rgba(0, 0, 0, 0.03);
 	width: 100%;
-}
-/* primele 2 clase sunt de la mine, nu le pusesem decat culoare, acum le-am pus si font size */
-.form-field input,
-.form-field textarea,
-.email-form input {
 	font-size: 14px;
 	letter-spacing: -0.28px;
 }
@@ -275,6 +272,8 @@ img {
 		padding: 40px;
 	}
 	/* aici si la butoanele mele am uitat sa fac modificarile de dimensiuni, pune-le te rog impreuna cu acestea */
+	/* plus ca sa arate bine la butoanele mele trebuie reglata si max width la 133px de la 768 in sus */
+	/* iar la butonul subscribe_button trebuie scoasa clasa button */
 	.top-sellers-section .button,
 	.subscribe_button {
 		padding: 14px 40px;
@@ -299,6 +298,9 @@ img {
 	.subscribe-form {
 		gap: 28px;
 	}
+	/* aceasta e o modificare care si mie mi-a scapat, din nou :( */
+	.top-sellers-section h2,
+	.modal-form > p,
 	.subscribe-modal-title {
 		font-size: 24px;
 		line-height: 28px;
