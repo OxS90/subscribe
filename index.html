@@ -25,13 +25,24 @@
 					with only the finest ingredients and handcrafted with the utmost care,
 					each piece is a work of art that is sure to please.
 				</p>
-				<button data-modal-open="#modal" type="button" class="subscribe_button">
+				<button
+					data-modal-open-subscribe="#modal-subscribe"
+					type="button"
+					class="subscribe_button"
+				>
 					Subscribe
 				</button>
-				<div class="backdrop is-hidden" data-modal>
+				<div
+					class="backdrop-subscribe is-hidden-subscribe"
+					data-modal-subscribe
+				>
 					<div class="modal-subscribe">
 						<div class="modal-header">
-							<button data-modal-close type="button" class="close-button">
+							<button
+								data-modal-close-subscribe
+								type="button"
+								class="close-button"
+							>
 								<svg>
 									<use
 										href="./images/icons.svg/symbol-defs.svg#icon-close-button"
@@ -59,6 +70,6 @@
 				</div>
 			</div>
 		</section>
-		<script src="js/modal.js"></script>
+		<script src="js/modal-subscribe.js"></script>
 	</body>
 </html>
